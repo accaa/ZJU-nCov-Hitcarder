@@ -221,7 +221,7 @@ def main(username, password):
 if __name__ == "__main__":
     username = os.environ['USERNAME']
     password = os.environ['PASSWORD']
-    time.sleep(random.randint(1, 10)*60) 
+    time.sleep(random.randint(1, 10)) 
     ret, msg = main(username, password)
     print(ret, msg)
     if ret == 1:
