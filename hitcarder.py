@@ -147,7 +147,7 @@ class HitCarder(object):
         codeurl='https://healthreport.zju.edu.cn/ncov/wap/default/code'
         ocr=ddddocr.DdddOcr()
         resp=self.sess.get(codeurl)
-        cpat=oct.classification(resp.content)
+        cpat=ocr.classification(resp.content)
         print(cpat)
         new_info['verifyCode'] = cpat
 
