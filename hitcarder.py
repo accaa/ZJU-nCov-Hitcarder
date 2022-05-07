@@ -10,7 +10,7 @@ import datetime
 import os
 import sys
 import message
-
+import ddddocr
 
 class HitCarder(object):
     """Hit carder class
@@ -21,7 +21,9 @@ class HitCarder(object):
         login_url: (str) 登录url
         base_url: (str) 打卡首页url
         save_url: (str) 提交打卡url
-        sess: (requests.Session) 统一的session
+        sess: (requests.
+        
+) 统一的session
     """
 
     def __init__(self, username, password):
@@ -142,7 +144,14 @@ class HitCarder(object):
         new_info['jcqzrq'] = ""
         new_info['ismoved'] = 0
         new_info.update(magic_code_group)
+        codeurl='https://healthreport.zju.edu.cn/ncov/wap/default/code'
+        ocr=ddddocr.Ddddocr()
+        resp=sess.get(code_url)
+        cpat=oct.classification(resp.content)
+        print(cpat)
+        new_info['verifyCode'] = cpat
 
+        
         self.info = new_info
         # print(json.dumps(self.info))
         return new_info
