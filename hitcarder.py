@@ -145,7 +145,7 @@ class HitCarder(object):
         new_info['ismoved'] = 0
         new_info.update(magic_code_group)
         codeurl='https://healthreport.zju.edu.cn/ncov/wap/default/code'
-        ocr=ddddocr.Ddddocr()
+        ocr=ddddocr.DdddOcr()
         resp=sess.get(code_url)
         cpat=oct.classification(resp.content)
         print(cpat)
