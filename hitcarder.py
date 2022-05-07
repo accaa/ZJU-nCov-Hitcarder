@@ -146,7 +146,7 @@ class HitCarder(object):
         new_info.update(magic_code_group)
         codeurl='https://healthreport.zju.edu.cn/ncov/wap/default/code'
         ocr=ddddocr.DdddOcr()
-        resp=sess.get(code_url)
+        resp=self.sess.get(code_url)
         cpat=oct.classification(resp.content)
         print(cpat)
         new_info['verifyCode'] = cpat
